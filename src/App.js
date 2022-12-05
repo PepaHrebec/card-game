@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card } from "./components/Card";
 
 function App() {
@@ -13,10 +13,22 @@ function App() {
     { pic: "intercom-icon", name: "Intercom" },
   ]);
 
+  const shuffle = () => {
+    list.sort(() => Math.random() - 0.5);
+    swapList([...list]);
+  };
+
   return (
     <main className="grid grid-cols-4">
       {list.map((obj) => {
-        return <Card pic={obj.pic} name={obj.name} key={obj.name} />;
+        return (
+          <Card
+            click={() => shuffle()}
+            pic={obj.pic}
+            name={obj.name}
+            key={obj.name}
+          />
+        );
       })}
     </main>
   );
