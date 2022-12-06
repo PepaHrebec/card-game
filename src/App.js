@@ -34,16 +34,20 @@ function App() {
     } else {
       setKeyArr([...keyArr, e.currentTarget.id]);
       setCurr(currScore + 1);
-      if (currScore > maxScore) {
-        setMax(currScore);
-      }
     }
     shuffle();
   };
 
   useEffect(() => {
     shuffle();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (currScore > maxScore) {
+      setMax(currScore);
+    }
+  }, [currScore, maxScore]);
 
   return (
     <>
