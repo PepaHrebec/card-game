@@ -12,6 +12,8 @@ function App() {
     { pic: "polymer", name: "Polymer" },
     { pic: "apostrophe", name: "Apostrophe" },
     { pic: "intercom-icon", name: "Intercom" },
+    { pic: "dart", name: "Dart" },
+    { pic: "graphql", name: "GraphQL" },
   ]);
 
   const [currScore, setCurr] = useState(0);
@@ -51,7 +53,7 @@ function App() {
 
   return (
     <>
-      <main className="grid grid-cols-4 gap-6 justify-items-center">
+      <main className="grid grid-cols-5 gap-6 justify-items-center pt-3">
         {list.map((obj) => {
           return (
             <Card
