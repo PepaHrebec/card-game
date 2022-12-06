@@ -52,8 +52,8 @@ function App() {
   }, [currScore, maxScore]);
 
   return (
-    <>
-      <main className="grid grid-cols-5 gap-6 justify-items-center pt-3">
+    <div className="dark:bg-slate-800 h-screen">
+      <main className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center pt-3">
         {list.map((obj) => {
           return (
             <Card
@@ -66,7 +66,7 @@ function App() {
         })}
       </main>
       <Counter scoreCurr={currScore} scoreMax={maxScore} />
-    </>
+    </div>
   );
 }
 
